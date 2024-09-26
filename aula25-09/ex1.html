@@ -21,8 +21,10 @@
         document.getElementById("armazenar").onclick = function () {
 
             let recebedora = parseFloat(document.getElementById("recebedora").value);
+            if(!isNaN(recebedora)){
             numeros.push(recebedora);
-
+            document.getElementById('recebedora').value = '';
+            }
         }
 
         document.getElementById("encontrarmenor").onclick = function () {
@@ -37,8 +39,10 @@
 
                 }
                 document.getElementById("resultado").innerText = 'Os numeros digitados foram:' + numeros.join
-                    (",") + " Omenor numero digitado foi" + menorNumero;
-            }
+                    (",") + " \n Omenor numero digitado foi" + menorNumero;
+            }else{
+                        document.getElementById("resultado").innerText = "nenhum número foi armazenado"
+                    }
         }
 
     </script>
